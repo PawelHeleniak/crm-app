@@ -1,11 +1,19 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-// const cors = require("cors");
-// const mongoose = require("mongoose");
+app.use(cors());
+app.use(express.json());
 
-// app.use(express.json())
-app.get("/crm", (req, res)=>{
-  res.status(200).send("Test")
-})
+const {PORT} = require("./config/config");
 
-app.listen(3001)
+//db  
+require("./config/database")
+
+//routers
+const userRouter = require("./api/routers/users");
+app.use("/user", userRouter);
+
+//server
+app.listen(PORT, function(){
+  console.log(`Serwer słucha... ${PORT}`);
+});
