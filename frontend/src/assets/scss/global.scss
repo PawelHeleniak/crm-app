@@ -1,0 +1,18 @@
+@use 'variables' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: v.$text-color-light;
+  background-color: v.$text-color-dark;
+  font-size: 1.2rem;
+  font-family: v.$font-stack;
+}
