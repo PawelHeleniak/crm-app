@@ -11,7 +11,7 @@ require("./config/database")
 
 //routers
 const userRouter = require("./api/routers/users");
-app.use("/user", userRouter);
+app.use("/users", userRouter);
 
 //server
 app.listen(PORT, function(){
