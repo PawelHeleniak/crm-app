@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 * {
   margin: 0;
@@ -12,41 +12,47 @@ html {
 
 body {
   color: v.$text-color-light;
-  // background-color: v.$bg-color-dark;
   background: v.$color-purple;
-  background: linear-gradient(145deg, v.$color-purple 0%, v.$color-purple-3 50%);
+  background: linear-gradient(
+    145deg,
+    v.$color-purple 0%,
+    v.$color-purple-3 50%
+  );
   font-size: 1rem;
   font-family: v.$font-stack;
 }
+#root {
+  display: flex;
+}
 
 //heading
-h1{
+h1 {
   font-size: 1.5rem;
 }
-h2{
+h2 {
   font-size: 1.35rem;
 }
-h3{
-  font-size: 1.20rem;
+h3 {
+  font-size: 1.2rem;
 }
 
 //inputs
-form{
-  .input-container{
+form {
+  .input-container {
     position: relative;
 
-    &:last-child{
-      input{
+    &:last-child {
+      input {
         margin-bottom: 10px;
       }
     }
-    label{
+    label {
       position: absolute;
       left: 0;
       color: v.$text-color-gray-2;
-      transition: all .2s ease-out;
+      transition: all 0.2s ease-out;
     }
-    input{
+    input {
       border: 0;
       border-bottom: 1px solid v.$bg-color-light;
       background-color: transparent;
@@ -56,11 +62,11 @@ form{
       margin-bottom: 30px;
       width: 100%;
 
-      &:focus{
+      &:focus {
         outline: none;
       }
       &:focus ~ label,
-      &:valid ~ label{
+      &:valid ~ label {
         transform: translateY(-100%);
       }
     }
@@ -68,7 +74,7 @@ form{
 }
 
 //LOGIN & REGISTER
-.content{
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,15 +83,15 @@ form{
   padding: 30px;
   font-size: 1.2rem;
 
-  form{
+  form {
     width: 100%;
     border-radius: v.$border-radius;
     background-color: v.$bg-color-dark;
     padding: 30px;
-    .title{
+    .title {
       padding-bottom: 30px;
     }
-    .button-container button{
+    .button-container button {
       font-size: 1rem;
       width: 100%;
       padding: 10px;
@@ -93,51 +99,87 @@ form{
       border-radius: v.$border-radius;
       color: v.$text-color-light;
       background: v.$color-purple;
-      background: linear-gradient(90deg, v.$color-purple 0%, v.$color-purple-3 30%);
+      background: linear-gradient(
+        90deg,
+        v.$color-purple 0%,
+        v.$color-purple-3 30%
+      );
     }
   }
 }
 
 //DASHBOARD
 //--- Nav ---
-header{
+header {
   background-color: v.$bg-color-dark;
   width: max-content;
-  nav{
+  nav {
     padding: 20px;
+    width: max-content;
     height: 100vh;
-    .title{
+    .title {
       display: flex;
       justify-content: space-between;
       padding-bottom: 20px;
-      .logout{
+      .logout {
         cursor: pointer;
       }
     }
-    .user-informations{
+    .user-informations {
       text-align: center;
       padding-bottom: 20px;
-      h3{
+      h3 {
         color: v.$color-purple-2;
       }
     }
-    .bookmarks{
-      .bookmark{
-        &.active{
+    .bookmarks {
+      .bookmark {
+        &.active {
           transform: translateX(10px);
           color: v.$color-purple-2;
         }
-        p{
+        p {
           padding: 10px 0;
           cursor: pointer;
-          transition: color .2s ease-out;
+          transition: color 0.2s ease-out;
 
-          &:hover{
+          &:hover {
             color: v.$color-purple-2-light;
           }
         }
       }
+    }
+  }
+}
 
+//--- Dashboard ---
+main {
+  width: 100%;
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    background-color: v.$bg-color-dark-2;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+
+    .card-wrapper {
+      background-color: v.$bg-color-dark;
+      padding: 10px;
+      border-radius: 10px;
+      height: max-content;
+
+      .card-title {
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid v.$bg-color-light;
+      }
+      .card-info {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+      }
     }
   }
 }
