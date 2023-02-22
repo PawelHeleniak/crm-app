@@ -8,8 +8,24 @@ export function Form() {
     email: '',
   })
 
+//   const handleSubmit = (e)=>{
+//     e.preventDefalut();
+
+    
+//       fetch('http://localhost:3001/users', {
+//       method: 'POST', 
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ name: data.name, lastName: data.lastName, password: data.password, email: data.email }),
+//       }).then((res) =>{
+//         console.log(res);
+//       })
+//  console.log("s");
+
+//   }
   return (
-    <form>
+    <form action="/">
       <div className="form-wrapper">
         <div className="title">
           <h2>Załóż konto</h2>
@@ -31,7 +47,7 @@ export function Form() {
           <label htmlFor="password">Hasło</label>
         </div>
         <div className="button-container">
-          <button type="button">Załóż konto</button>
+          <button type="submit">Załóż konto</button>
         </div>
       </div>
     </form>

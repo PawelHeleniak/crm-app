@@ -13,12 +13,24 @@ html {
 body {
   color: v.$text-color-light;
   // background-color: v.$bg-color-dark;
-  background: rgb(129,36,147);
-  background: linear-gradient(145deg, rgba(129,36,147,1) 0%, rgba(88,70,255,1) 50%);
-  font-size: 1.2rem;
+  background: v.$color-purple;
+  background: linear-gradient(145deg, v.$color-purple 0%, v.$color-purple-3 50%);
+  font-size: 1rem;
   font-family: v.$font-stack;
 }
 
+//heading
+h1{
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1.35rem;
+}
+h3{
+  font-size: 1.20rem;
+}
+
+//inputs
 form{
   .input-container{
     position: relative;
@@ -55,6 +67,7 @@ form{
   }
 }
 
+//LOGIN & REGISTER
 .content{
   display: flex;
   justify-content: center;
@@ -62,6 +75,7 @@ form{
   height: 100vh;
   width: 100vw;
   padding: 30px;
+  font-size: 1.2rem;
 
   form{
     width: 100%;
@@ -78,8 +92,49 @@ form{
       border: none;
       border-radius: v.$border-radius;
       color: v.$text-color-light;
-      background: rgb(129,36,147);
-      background: linear-gradient(145deg, rgba(129,36,147,1) 0%, rgba(88,70,255,1) 50%);
+      background: v.$color-purple;
+      background: linear-gradient(90deg, v.$color-purple 0%, v.$color-purple-3 30%);
+    }
+  }
+}
+
+//DASHBOARD
+//--- Nav ---
+header{
+  background-color: v.$bg-color-dark;
+  width: max-content;
+  nav{
+    padding: 20px;
+    height: 100vh;
+
+    .user-permissions{
+      padding-bottom: 20px;
+
+    }
+    .user-informations{
+      text-align: center;
+      padding-bottom: 20px;
+      h3{
+        color: v.$color-purple-2;
+      }
+    }
+    .bookmarks{
+      .bookmark{
+        &.active{
+          transform: translateX(10px);
+          color: v.$color-purple-2;
+        }
+        p{
+          padding: 10px 0;
+          cursor: pointer;
+          transition: color .2s ease-out;
+
+          &:hover{
+            color: v.$color-purple-2-light;
+          }
+        }
+      }
+
     }
   }
 }
