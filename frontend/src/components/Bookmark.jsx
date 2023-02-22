@@ -1,7 +1,7 @@
 import React from 'react'
 
-export function Bookmark({data}) {
+export function Bookmark({data, handleActive}) {
   return (
-    <div className={data.active ? 'bookmark active' : 'bookmark'}><p>{data.name}</p></div>
+    <div className={data.active ? 'bookmark active' : 'bookmark'}><p onClick={handleActive}>{data.name}</p></div>
   );
 }

@@ -106,10 +106,13 @@ header{
   nav{
     padding: 20px;
     height: 100vh;
-
-    .user-permissions{
+    .title{
+      display: flex;
+      justify-content: space-between;
       padding-bottom: 20px;
-
+      .logout{
+        cursor: pointer;
+      }
     }
     .user-informations{
       text-align: center;
