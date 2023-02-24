@@ -25,6 +25,11 @@ body {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+  color: v.$text-color-light;
+}
+
 //heading
 h1 {
   font-size: 1.5rem;
@@ -98,12 +103,18 @@ form {
       border: none;
       border-radius: v.$border-radius;
       color: v.$text-color-light;
-      background: v.$color-purple;
-      background: linear-gradient(
-        90deg,
-        v.$color-purple 0%,
-        v.$color-purple-3 30%
-      );
+      background: v.$color-purple-3;
+      margin-bottom: 20px;
+      cursor: pointer;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .link {
+      padding-top: 20px;
+      a {
+        color: v.$color-purple-2;
+      }
     }
   }
 }
@@ -136,9 +147,11 @@ header {
       .bookmark {
         &.active {
           transform: translateX(10px);
-          color: v.$color-purple-2;
+          a {
+            color: v.$color-purple-2;
+          }
         }
-        p {
+        a {
           padding: 10px 0;
           cursor: pointer;
           transition: color 0.2s ease-out;

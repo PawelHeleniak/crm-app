@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-export function Bookmark({data, handleActive}) {
+export function Bookmark({ data, handleActive, link }) {
   return (
-    <div className={data.active ? 'bookmark active' : 'bookmark'}><p onClick={handleActive}>{data.name}</p></div>
+    <div className={data.active ? "bookmark active" : "bookmark"}>
+      <Link to={data.link} onClick={handleActive}>
+        {data.name}
+      </Link>
+    </div>
   );
 }
