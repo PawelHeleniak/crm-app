@@ -15,7 +15,7 @@ export function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/">
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" index element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" index element={<Dashboard />} />
       </Route>

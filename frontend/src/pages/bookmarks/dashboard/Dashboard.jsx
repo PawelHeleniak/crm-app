@@ -24,7 +24,9 @@ export function Dashboard() {
 
   return (
     <>
-      <Nav />
+      <header>
+        <Nav />
+      </header>
       <main>
         <section>{card}</section>
       </main>

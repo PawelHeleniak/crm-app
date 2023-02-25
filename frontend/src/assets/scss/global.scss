@@ -122,42 +122,92 @@ form {
 //DASHBOARD
 //--- Nav ---
 header {
-  background-color: v.$bg-color-dark;
-  width: max-content;
   nav {
-    padding: 20px;
-    width: max-content;
-    height: 100vh;
-    .title {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 20px;
-      .logout {
-        cursor: pointer;
-      }
-    }
-    .user-informations {
-      text-align: center;
-      padding-bottom: 20px;
-      h3 {
-        color: v.$color-purple-2;
-      }
-    }
-    .bookmarks {
-      .bookmark {
-        &.active {
-          transform: translateX(10px);
-          a {
-            color: v.$color-purple-2;
-          }
-        }
-        a {
-          padding: 10px 0;
-          cursor: pointer;
-          transition: color 0.2s ease-out;
+    // position: fixed;
+    // width: max-content;
+    // background-color: v.$bg-color-dark;
+    // padding: 20px;
+    // height: 100%;
+    // width: 60%;
+    // z-index: 10;
+    // transform: translateX(-100%);
 
-          &:hover {
-            color: v.$color-purple-2-light;
+    // &.active {
+    //   transform: translateX(100%);
+    //   &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: rgba(0, 0, 0, 0.5);
+    //     z-index: -1;
+    //   }
+    // }
+    height: 100vh;
+
+    .menu-trigger {
+      width: max-content;
+      padding: 20px;
+    }
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60%;
+      height: 100vh;
+      background-color: v.$bg-color-dark;
+      padding: 20px;
+      transform: translateX(-100%);
+      &.active {
+        transform: translateX(0);
+      }
+      // z-index: 10;
+      // transform: translateX(-100%);
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   height: 100%;
+      //   width: 100%;
+      //   background-color: rgba(0, 0, 0, 0.5);
+      //   z-index: -1;
+      // }
+      .title {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+
+        .logout {
+          cursor: pointer;
+        }
+      }
+      .user-informations {
+        text-align: center;
+        padding-bottom: 20px;
+        h3 {
+          color: v.$color-purple-2;
+        }
+      }
+      .bookmarks {
+        .bookmark {
+          &.active {
+            transform: translateX(10px);
+            a {
+              color: v.$color-purple-2;
+            }
+          }
+          a {
+            display: inherit;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: color 0.2s ease-out;
+
+            &:hover {
+              color: v.$color-purple-2-light;
+            }
           }
         }
       }

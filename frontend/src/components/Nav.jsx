@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Bookmark } from "./Bookmark";
+import { Link } from "react-router-dom";
 
 export function Nav() {
   const bookmarks = [
@@ -19,10 +20,8 @@ export function Nav() {
       active: false,
     },
   ];
+  const [open, setOpen] = useState(false);
 
-  const handleLogout = () => {
-    alert("wylogowano");
-  };
   const handleActive = () => {
     console.log("s");
   };
@@ -31,15 +30,31 @@ export function Nav() {
     <Bookmark data={val} handleActive={handleActive} />
   ));
 
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      console.log(menuRef.current);
+      if (menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+  });
+
   return (
-    <header>
-      <nav>
+    <nav>
+      <div
+        className="menu-trigger"
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        <p>O</p>
+      </div>
+      <div className={`menu ${!open ? "active" : ""}`} ref={menuRef}>
         <div className="title">
           <div className="user-permissions">
             <h1>Admin</h1>
-          </div>
-          <div className="logout">
-            <span onClick={handleLogout}>Log out</span>
           </div>
         </div>
         <div className="user-informations">
@@ -47,7 +62,10 @@ export function Nav() {
           <h3>Admin</h3>
         </div>
         <div className="bookmarks">{bookmark}</div>
-      </nav>
-    </header>
+        <div className="logout">
+          <Link to="/login">Log out</Link>
+        </div>
+      </div>
+    </nav>
   );
 }
