@@ -1,44 +1,47 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Bookmark } from "./Bookmark";
 import { Link } from "react-router-dom";
+import user from "../assets/icon/user.png";
 
 export function Nav() {
   const bookmarks = [
     {
       name: "Dashboard",
       link: "/dashboard",
-      active: true,
     },
     {
       name: "Konto",
       link: "/dashboard",
-      active: false,
     },
     {
       name: "Pracownicy",
       link: "/dashboard",
-      active: false,
     },
   ];
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("Dashboard");
 
-  const handleActive = () => {
-    console.log("s");
+  //change active bookmark
+  const handleActive = (e) => {
+    setActive(e);
   };
 
   const bookmark = bookmarks.map((val) => (
-    <Bookmark data={val} handleActive={handleActive} />
+    <Bookmark data={val} active={active} handleActive={handleActive} />
   ));
 
+  //active nav
   let menuRef = useRef();
   useEffect(() => {
     let handler = (e) => {
-      console.log(menuRef.current);
-      if (menuRef.current.contains(e.target)) {
+      if (!menuRef.current.contains(e.target)) {
         setOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
   });
 
   return (
@@ -51,13 +54,9 @@ export function Nav() {
       >
         <p>O</p>
       </div>
-      <div className={`menu ${!open ? "active" : ""}`} ref={menuRef}>
-        <div className="title">
-          <div className="user-permissions">
-            <h1>Admin</h1>
-          </div>
-        </div>
+      <div className={`menu ${open ? "active" : ""}`} ref={menuRef}>
         <div className="user-informations">
+          <img src={user} alt="" />
           <h2>Imie Nazwisko</h2>
           <h3>Admin</h3>
         </div>

@@ -77,7 +77,9 @@ form {
     }
   }
 }
-
+main {
+  overflow: hidden;
+}
 //LOGIN & REGISTER
 .content {
   display: flex;
@@ -122,34 +124,17 @@ form {
 //DASHBOARD
 //--- Nav ---
 header {
+  overflow: hidden;
   nav {
-    // position: fixed;
-    // width: max-content;
-    // background-color: v.$bg-color-dark;
-    // padding: 20px;
-    // height: 100%;
-    // width: 60%;
-    // z-index: 10;
-    // transform: translateX(-100%);
-
-    // &.active {
-    //   transform: translateX(100%);
-    //   &::after {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     background-color: rgba(0, 0, 0, 0.5);
-    //     z-index: -1;
-    //   }
-    // }
     height: 100vh;
 
     .menu-trigger {
+      position: sticky;
+      top: 0;
       width: max-content;
-      padding: 20px;
+      height: 100%;
+      padding: 15px;
+      background-color: v.$bg-color-dark;
     }
     .menu {
       position: fixed;
@@ -160,30 +145,20 @@ header {
       background-color: v.$bg-color-dark;
       padding: 20px;
       transform: translateX(-100%);
+      transition: transform 0.2s ease-out;
       &.active {
         transform: translateX(0);
       }
-      // z-index: 10;
-      // transform: translateX(-100%);
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   height: 100%;
-      //   width: 100%;
-      //   background-color: rgba(0, 0, 0, 0.5);
-      //   z-index: -1;
-      // }
       .title {
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
-
-        .logout {
-          cursor: pointer;
-        }
       }
+      .logout {
+        padding-top: 10px;
+        cursor: pointer;
+      }
+
       .user-informations {
         text-align: center;
         padding-bottom: 20px;
