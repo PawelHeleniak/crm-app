@@ -22,26 +22,26 @@ ChartJS.register(
 );
 
 export function Chart() {
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+  const labels = ["Styczeń", "Luty", "Marzec"];
 
   const data = {
     labels,
     datasets: [
       {
-        data: [, 8, 5],
+        label: "Leady",
+        data: [10, 22, 0],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
-        data: [9, 8, 5],
+        label: "Projekty",
+        data: [3, 6, 0],
+        borderColor: "rgb(24, 29, 242)",
+        backgroundColor: "rgba(24, 29, 242, 0.5)",
+      },
+      {
+        label: "Zadania",
+        data: [47, 103, 0],
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
@@ -56,7 +56,7 @@ export function Chart() {
       },
       title: {
         display: true,
-        text: "Chart.js Line Chart",
+        text: "Statystyki na rok 2023",
       },
     },
   };

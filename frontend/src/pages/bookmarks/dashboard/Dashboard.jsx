@@ -18,7 +18,7 @@ export function Dashboard() {
     {
       title: "Zadania",
       description: "Aktualny miesiąc",
-      amount: "143",
+      amount: "103",
     },
   ];
   const card = cards.map((val) => <Card data={val} />);
