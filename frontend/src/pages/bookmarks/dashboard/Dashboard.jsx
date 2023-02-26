@@ -1,6 +1,7 @@
 import React from "react";
 import { Nav } from "../../../components/Nav";
 import { Card } from "./components/Card";
+import { Chart } from "./components/Chart";
 
 export function Dashboard() {
   const cards = [
@@ -29,6 +30,9 @@ export function Dashboard() {
       </header>
       <main>
         <section>{card}</section>
+        <section>
+          <Chart />
+        </section>
       </main>
     </>
   );
