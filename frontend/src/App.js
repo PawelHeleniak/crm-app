@@ -10,6 +10,7 @@ import {
 import { Register } from "./pages/register/Register";
 import { Login } from "./pages/login/Login";
 import { Dashboard } from "./pages/bookmarks/dashboard/Dashboard";
+import { Account } from "./pages/bookmarks/account/Account";
 
 export function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export function App() {
         <Route path="/login" index element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" index element={<Dashboard />} />
+        <Route path="/konto" index element={<Account />} />
       </Route>
     )
   );

@@ -203,33 +203,37 @@ header {
 main {
   width: 100%;
   background-color: v.$bg-color-dark-2;
+  .section-container {
+    max-width: 1400px;
+    margin: 0 auto;
 
-  section.section-card {
-    @include ms.desktop {
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 20px;
-    }
-
-    display: grid;
-    grid-template-rows: repeat(3, 0fr);
-    grid-row-gap: 10px;
-    padding: 20px;
-    width: 100%;
-    .card-wrapper {
-      background-color: v.$bg-color-dark;
-      padding: 10px;
-      border-radius: 10px;
-      height: max-content;
-
-      .card-title {
-        text-align: center;
-        padding-bottom: 10px;
-        border-bottom: 1px solid v.$bg-color-light;
+    section.section-card {
+      @include ms.desktop {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
       }
-      .card-info {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 10px;
+
+      display: grid;
+      grid-template-rows: repeat(3, 0fr);
+      grid-row-gap: 10px;
+      padding: 20px;
+      width: 100%;
+      .card-wrapper {
+        background-color: v.$bg-color-dark;
+        padding: 10px;
+        border-radius: 10px;
+        height: max-content;
+
+        .card-title {
+          text-align: center;
+          padding-bottom: 10px;
+          border-bottom: 1px solid v.$bg-color-light;
+        }
+        .card-info {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 10px;
+        }
       }
     }
   }

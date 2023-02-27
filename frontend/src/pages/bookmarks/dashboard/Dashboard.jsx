@@ -29,10 +29,12 @@ export function Dashboard() {
         <Nav />
       </header>
       <main>
-        <section className="section-card">{card}</section>
-        <section className="section-chart">
-          <Chart />
-        </section>
+        <div className="section-container">
+          <section className="section-card">{card}</section>
+          <section className="section-chart">
+            <Chart />
+          </section>
+        </div>
       </main>
     </>
   );
