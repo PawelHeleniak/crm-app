@@ -11,6 +11,10 @@ export function Nav() {
     },
     {
       name: "Konto",
+      link: "/konto",
+    },
+    {
+      name: "Kalendarz",
       link: "/dashboard",
     },
     {

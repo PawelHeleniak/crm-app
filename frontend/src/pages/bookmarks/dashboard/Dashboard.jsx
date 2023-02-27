@@ -29,8 +29,8 @@ export function Dashboard() {
         <Nav />
       </header>
       <main>
-        <section>{card}</section>
-        <section>
+        <section className="section-card">{card}</section>
+        <section className="section-chart">
           <Chart />
         </section>
       </main>
