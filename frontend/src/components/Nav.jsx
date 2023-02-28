@@ -23,7 +23,7 @@ export function Nav() {
     },
   ];
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("Dashboard");
+  const [active, setActive] = useState("");
 
   //change active bookmark
   const handleActive = (e) => {
