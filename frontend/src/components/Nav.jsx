@@ -15,7 +15,7 @@ export function Nav() {
     },
     {
       name: "Kalendarz",
-      link: "/dashboard",
+      link: "/kalendarz",
     },
     {
       name: "Pracownicy",
