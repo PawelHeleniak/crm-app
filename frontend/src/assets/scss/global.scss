@@ -149,8 +149,17 @@ header {
       top: 0;
       width: max-content;
       height: 100%;
-      padding: 15px;
+      padding: 10px;
       background-color: v.$bg-color-dark;
+      cursor: pointer;
+
+      svg {
+        @include ms.tablet {
+          width: 32px;
+        }
+        width: 24px;
+        height: auto;
+      }
     }
     .menu {
       @include ms.tablet {
@@ -311,7 +320,7 @@ header {
     }
   }
   .arrow-icon {
-    a {
+    svg {
       display: flex;
       justify-content: center;
       align-items: center;

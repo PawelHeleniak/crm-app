@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Bookmark } from "./Bookmark";
 import { Link } from "react-router-dom";
 import user from "../assets/icon/user.png";
+import { HiMenu } from "react-icons/hi";
 
 export function Nav() {
   const bookmarks = [
@@ -56,7 +57,7 @@ export function Nav() {
           setOpen(!open);
         }}
       >
-        <p>O</p>
+        <HiMenu />
       </div>
       <div className={`menu ${open ? "active" : ""}`} ref={menuRef}>
         <div className="user-informations">

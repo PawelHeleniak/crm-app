@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Nav } from "../../../components/Nav";
 import { CalendarDay } from "./components/CalendarDay";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export function Calendar() {
   const [date, setDate] = useState({
@@ -62,12 +63,7 @@ export function Calendar() {
               <h1>{`${date.year}-${date.month + 1}`}</h1>
               <div className="calendar">
                 <div className="arrow-icon left">
-                  <a
-                    className="material-icons"
-                    onClick={() => handleDate(date.month - 1)}
-                  >
-                    back
-                  </a>
+                  <FaArrowLeft onClick={() => handleDate(date.month - 1)} />
                 </div>
                 <div className="module-section">
                   <div className="days-week-wrapper">
@@ -105,12 +101,7 @@ export function Calendar() {
                   </div>
                 </div>
                 <div className="arrow-icon right">
-                  <a
-                    className="material-icons"
-                    onClick={() => handleDate(date.month + 1)}
-                  >
-                    for
-                  </a>
+                  <FaArrowRight onClick={() => handleDate(date.month + 1)} />
                 </div>
               </div>
             </div>
