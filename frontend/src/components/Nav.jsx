@@ -23,7 +23,10 @@ export function Nav() {
       link: "/dashboard",
     },
   ];
-  const [open, setOpen] = useState(false);
+  const windowSize = useRef(window.innerWidth);
+  const checkWidth = windowSize.current >= 1024 ? true : false;
+
+  const [open, setOpen] = useState(checkWidth);
   const [active, setActive] = useState("");
 
   //change active bookmark
@@ -39,7 +42,7 @@ export function Nav() {
   let menuRef = useRef();
   useEffect(() => {
     let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
+      if (!menuRef.current.contains(e.target) && !checkWidth) {
         setOpen(false);
       }
     };
@@ -62,7 +65,7 @@ export function Nav() {
       <div className={`menu ${open ? "active" : ""}`} ref={menuRef}>
         <div className="user-informations">
           <img src={user} alt="" />
-          <h2>Imie Nazwisko</h2>
+          <h2>Łukasz Wiśniewski</h2>
           <h3>Admin</h3>
         </div>
         <div className="bookmarks">{bookmark}</div>

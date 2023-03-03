@@ -138,13 +138,15 @@ main {
 //DASHBOARD
 //--- Nav ---
 header {
-  overflow: hidden;
-
   nav {
     height: 100%;
     position: relative;
+    overflow: hidden;
 
     .menu-trigger {
+      @include ms.desktop {
+        display: none;
+      }
       position: sticky;
       top: 0;
       width: max-content;
@@ -165,12 +167,15 @@ header {
       @include ms.tablet {
         width: max-content;
         padding: 20px 40px;
+        height: 100%;
       }
-
+      @include ms.desktop {
+        position: sticky;
+      }
       position: fixed;
       top: 0;
       left: 0;
-      width: 60%;
+      width: max-content;
       height: 100vh;
       background-color: v.$bg-color-dark;
       padding: 20px;
